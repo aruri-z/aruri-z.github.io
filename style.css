@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(194, 194, 220);
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+#navbar {
+    background-color: rgba(34, 142, 220, 0.6);
+    height: 8vh;
+}
+
+#navbar li {
+    display: inline;
+    float: right;
+    margin: 3px 10px;
+    padding: 15px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    background-color: white;
+    color: gray;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+#title {
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(62, 117, 186);
+    font-family: fantasy;
+}
+
+h2 {
+    float: right;
+    margin-right: 5px;
+    bottom: 2vh;
+    color: red;
+    border-radius: 30px;
+    padding: 5px;
+    background-color: white;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: sticky;
+    cursor: pointer;
+}
+
+h2:hover {
+    color: white;
+    background-color: red;
+}
+
+h2:before {
+    content: attr(data-count);
+    position: absolute;   
+    color: white;
+    right: 19px;
+    font-size: 15px;
+    text-align: center;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background-color:red;
+    border-radius: 50%; 
+    opacity: 0;
+}
+
+h2.zero:before {
+    opacity: 1;
+}
+
+#catalog {
+    text-align: center;
+    height: 100vh;
+    margin: 3vh auto;
+}
+
+#catalog section {
+    height: 20vh;
+    display: inline-block;
+    padding: 15px;
+    background-color: rgb(53, 143, 223);
+    border-radius: 15%;
+    box-shadow: 8px 8px 20px 1px;
+    margin: 20px;
+}
+
+img {
+    height: 20vh;
+}
+
+p {
+    color: white;
+    margin-top: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h4 {
+    padding: 5px;
+    margin-top: 0;
+    text-align: center;
+}
+
+button {
+    padding: 5px;
+    background: rgb(25, 201, 145);
+    border: none;
+    outline: none;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+button:hover {
+    color: green;
+    background: white;
+}
+
+button.del-btn {
+    display: none;
+}
+
+#catalog section span {
+    position: absolute;
+    top: 14px;
+    left: 13px;   
+    width: 300px;
+    height: 186px;
+    display:none
+}
+
+#catalog section span img {
+    width: 100%;
+    height: 100%;
+}
+
+#catalog section:nth-child(1)>span.active {
+    animation: first 0.7s ease;
+    z-index: 2;
+    display: block;
+}
+#catalog section:nth-child(2)>span.active {
+    animation: second 0.7s ease;
+    z-index: 2;
+    display: block;
+}
+#catalog section:nth-child(3)>span.active {
+    animation: third 0.7s ease;
+    z-index: 2;
+    display: block;
+}
+#catalog section:nth-child(4)>span.active {
+    animation: fourth 0.7s ease;
+    z-index: 2;
+    display: block;
+}
+#catalog section:nth-child(5)>span.active {
+    animation: fifth 0.7s ease;
+    z-index: 2;
+    display: block;
+}
+#catalog section:nth-child(6)>span.active {
+    animation: sixth 0.7s ease;
+    z-index: 2;
+    display: block;
+}
+
+@keyframes first {
+    to {
+        width: 30px;
+        height: 20px;
+        left: 100vw;
+        top: 100vh;
+    }
+}
+@keyframes second {
+    to {
+        width: 30px;
+        height: 20px;
+        left: 100vw;
+        top: 100vh;
+    }
+}
+@keyframes third {
+    to {
+        width: 30px;
+        height: 20px;
+        left: 100vw;
+        top: 100vh;
+    }
+}
+@keyframes fourth {
+    to {
+        width: 30px;
+        height: 20px;
+        left: 100vw;
+        top: 100vh;
+    }
+}
+@keyframes fifth {
+    to {
+        width: 30px;
+        height: 20px;
+        left: 100vw;
+        top: 100vh;
+    }
+}
+@keyframes sixth {
+    to {
+        width: 30px;
+        height: 20px;
+        left: 100vw;
+        top: 100vh;
+    }
+}
+
+.select {
+    width: 30vw;
+    min-width: 45vh;
+    max-height: 50vh;
+    padding: 5%;
+    background: rgba(19, 126, 75, 0.9);
+    position: absolute;
+    top: -1000px;
+    right: 20px;
+    transition: 0.5s;
+    overflow-y: auto;
+    margin: auto;
+    border-radius: 30px;
+}
+
+.select.display {
+    top: 20vh;
+    right: 20px;
+
+}
+
+.select section {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    padding: 5px;
+    border: 1px solid white;
+    position: relative;
+    margin: 5px auto;
+}
+
+.select section img {
+    max-width: 10vw;
+    padding: 5px;
+    text-align: center;
+}
+
+.select section p {
+    padding: 35px;
+    margin: 0 auto;
+    color: white;
+}
+
+.select section h4,
+.select section button {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    color: white;
+}
+
+.select section button {
+    left: 60%;
+    top: 50%;   
+}
+
+.select section button:hover {
+    background-color: white;
+    color: green;
+}
+
+.select button.del-btn {
+    display: block;
+    position: absolute;
+    left: 80%;
+    top: 50%;  
+    background-color: red;
+}
+
+.select button.del-btn:hover {
+    color: red;
+    background-color: white;
+}
+
+.select section span {
+    display: none;
+}
