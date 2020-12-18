@@ -58,32 +58,13 @@ for (let i = 0; i < button.length; i++) {
 			const target = e.target
 			// console.log(parent);
 			const delbut = document.getElementsByClassName('del-btn')[0]
-			const greenBtn = document.getElementsByClassName('green-btn')[0]
+
 
 			// console.log(target.classList);
 
 			if (target.classList[0] === delbut.classList[0]) {
 				parent.remove()
 				h2.setAttribute('data-count', add--)
-			} else if (target.classList[0] === greenBtn.classList[0]) {
-				// alert('Terimakasih')
-				h2.setAttribute('data-count', add--)
-				parent.remove()
-				history.classList.add('zero')
-
-				done.appendChild(clone)
-
-			 //masih error parentNodenya masih sama kek si cart
-				//kalo satu2 masih aman. add 1 -> buy -> aman
-				// gak aman ->>>> add 1+1+1+1 ->>> buy --> hilang semua
-				// yg udah di remove juga masuk ke history, kalo pencet remove terus add terus buy
-				clone.lastElementChild.innerHTML = "<h5>Payment Successfull</h5>"
-
-				if (clone) {
-					history.onclick = () => {
-						done.classList.toggle('display')
-					}
-				}
 			}
 		}
 
@@ -97,3 +78,46 @@ warning.style.position = 'sticky'
 warning.style.bottom = '0'
 warning.style.maxWidth = '30vw'
 warning.style.fontSize = '20px'
+
+
+for (let i = 0; i < button.length; i++) {
+
+	button[i].addEventListener('click', (e) => {
+
+		let add = Number(h2.getAttribute('data-count') || 0)
+		const parent = e.target.parentNode
+		const target = e.target
+		const clone = parent.cloneNode(true)
+
+		const greenBtn = document.getElementsByClassName('green-btn')[0]
+		console.log( select.childElementCount);
+
+		if (select.childElementCount > 2) {
+
+			if (target.classList[0] === greenBtn.classList[0]) {
+				// alert('Terimakasih')
+				h2.setAttribute('data-count', add--)
+			
+				history.classList.add('zero')
+				done.appendChild(clone)
+	
+				//masih error parentNodenya masih sama kek si cart
+				//kalo satu2 masih aman. add 1 -> buy -> aman
+				// gak aman ->>>> add 1+1+1+1 ->>> buy --> hilang semua
+				// yg udah di remove juga masuk ke history, kalo pencet remove terus add terus buy
+				clone.lastElementChild.innerHTML = "<h5>Payment Successfull</h5>"
+	
+				if (clone) {
+					history.onclick = () => {
+						done.classList.toggle('display')
+					}
+				}
+			}
+		}
+	})
+
+
+
+}
+
+
