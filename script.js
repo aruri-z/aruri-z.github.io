@@ -13,7 +13,7 @@ const history = document.querySelector('.history')
 for (let i = 0; i < button.length; i++) {
 	//add counters
 	button[i].addEventListener('click', (e) => {
-		var add = Number(h2.getAttribute('data-count') || 0)
+		let add = Number(h2.getAttribute('data-count') || 0)
 		h2.setAttribute('data-count', add + 1)
 		h2.classList.add('zero')
 
@@ -49,6 +49,7 @@ for (let i = 0; i < button.length; i++) {
 		select.addEventListener('click', deleteButton)
 		// const p = select.querySelector('p')
 
+		//tambah fitur deleteButton dan buynow
 		function deleteButton(e) {
 			// console.log(e.target);
 			const parent = e.target.parentNode
@@ -68,7 +69,7 @@ for (let i = 0; i < button.length; i++) {
 				parent.remove()
 
 
-				var hist = Number(history.getAttribute('data-count') || 0)
+				// let hist = Number(history.getAttribute('data-count') || 0)
 				// history.setAttribute('data-count', hist+1)
 				history.classList.add('zero')
 
@@ -91,3 +92,7 @@ for (let i = 0; i < button.length; i++) {
 	})
 }
 
+const warning = document.getElementById('oops')
+warning.innerText = "Oops! fitur 'buy-now' sedang dalam perbaikan"
+warning.setAttribute('style', 'opacity')
+warning.style.opacity = 0.3
