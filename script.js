@@ -7,6 +7,8 @@ const section = document.getElementsByClassName('products')
 const catalog = document.getElementById('catalog')
 const history = document.querySelector('.history')
 
+// console.log(select.getElementsByTagName('button'));
+
 // console.log(catalog);
 
 //looping button
@@ -67,15 +69,11 @@ for (let i = 0; i < button.length; i++) {
 				// alert('Terimakasih')
 				h2.setAttribute('data-count', add--)
 				parent.remove()
-
-
-				// let hist = Number(history.getAttribute('data-count') || 0)
-				// history.setAttribute('data-count', hist+1)
 				history.classList.add('zero')
 
-				// console.log(e.target.parentNode);
+				done.appendChild(clone)
 
-				done.appendChild(clone) //masih error parentNodenya masih sama kek si cart
+			 //masih error parentNodenya masih sama kek si cart
 				//kalo satu2 masih aman. add 1 -> buy -> aman
 				// gak aman ->>>> add 1+1+1+1 ->>> buy --> hilang semua
 				// yg udah di remove juga masuk ke history, kalo pencet remove terus add terus buy
@@ -95,3 +93,7 @@ for (let i = 0; i < button.length; i++) {
 const warning = document.getElementById('oops')
 warning.innerText = "Oops! fitur 'buy-now' sedang dalam perbaikan"
 warning.style.opacity = 0.3
+warning.style.position = 'sticky'
+warning.style.bottom = '0'
+warning.style.maxWidth = '30vw'
+warning.style.fontSize = '20px'

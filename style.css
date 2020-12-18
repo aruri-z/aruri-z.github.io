@@ -112,7 +112,7 @@ h2.history:before {
     content: attr(data-count);
     position: absolute;   
     color: white;
-    right: 19px;
+    right: 33px;
     font-size: 15px;
     text-align: center;
     top: -10px;
