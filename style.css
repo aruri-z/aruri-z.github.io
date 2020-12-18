@@ -48,7 +48,8 @@ header {
     font-family: fantasy;
 }
 
-h2 {
+/* h2.cart START============================== */
+h2.cart {
     float: right;
     margin-right: 5px;
     bottom: 2vh;
@@ -62,12 +63,12 @@ h2 {
     cursor: pointer;
 }
 
-h2:hover {
+h2.cart:hover {
     color: white;
     background-color: red;
 }
 
-h2:before {
+h2.cart:before {
     content: attr(data-count);
     position: absolute;   
     color: white;
@@ -82,9 +83,50 @@ h2:before {
     opacity: 0;
 }
 
-h2.zero:before {
+h2.cart.zero:before {
     opacity: 1;
 }
+/* h2.cart END==================================== */
+
+/* h2.history START================================= */
+h2.history {
+    float: right;
+    margin-right: 5px;
+    bottom: 2vh;
+    color: rgb(0, 64, 255);
+    border-radius: 30px;
+    padding: 5px;
+    background-color: white;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: sticky;
+    cursor: pointer;
+}
+
+h2.history:hover {
+    color: white;
+    background-color: rgb(0, 64, 255);
+}
+
+h2.history:before {
+    content: attr(data-count);
+    position: absolute;   
+    color: white;
+    right: 19px;
+    font-size: 15px;
+    text-align: center;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background-color:rgb(0, 64, 255);
+    border-radius: 50%; 
+    opacity: 0;
+}
+
+h2.history.zero:before {
+    opacity: 1;
+}
+/* h2.history END==================================== */
 
 #catalog {
     text-align: center;
@@ -201,10 +243,10 @@ button.del-btn {
 @keyframes second {
     from {
         top: 20%;
-        left: 20%;
+        left: 25%;
     }
     to {
-        width: 30px;
+        width: 20px;
         height: 20px;
         left: 100vw;
         top: 100vh;
@@ -216,7 +258,7 @@ button.del-btn {
         left: 40%;
     }
     to {
-        width: 30px;
+        width: 20px;
         height: 20px;
         left: 100vw;
         top: 100vh;
@@ -228,7 +270,7 @@ button.del-btn {
         left: 50%;
     }
     to {
-        width: 30px;
+        width: 20px;
         height: 20px;
         left: 100vw;
         top: 100vh;
@@ -240,7 +282,7 @@ button.del-btn {
         left: 70%;
     }
     to {
-        width: 30px;
+        width: 20px;
         height: 20px;
         left: 100vw;
         top: 100vh;
@@ -336,5 +378,70 @@ button.del-btn {
 }
 
 .select section span {
+    display: none;
+}
+
+/* done payment */
+.done {
+    width: 30vw;
+    min-width: 45vh;
+    max-height: 50vh;
+    padding: 5%;
+    background: rgba(10, 30, 159, 0.9);
+    position: absolute;
+    top: -1000px;
+    left: 20px;
+    transition: 0.5s;
+    overflow-y: auto;
+    margin: auto;
+    border-radius: 30px;
+}
+
+.done.display {
+    top: 20vh;
+    left: 20px;
+}
+
+.done section {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    padding: 5px;
+    border: 1px solid white;
+    position: relative;
+    margin: 5px auto;
+}
+
+.done section img {
+    max-width: 10vw;
+    padding: 5px;
+    text-align: center;
+}
+
+.done section p {
+    padding: 35px;
+    margin: 0 auto;
+    color: white;
+}
+
+.done section h4,
+.done section button {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    color: white;
+}
+
+.done section button {
+    left: 60%;
+    top: 50%;   
+}
+
+.done section button:hover {
+    background-color: white;
+    color: green;
+}
+
+.done section span {
     display: none;
 }
