@@ -3,11 +3,14 @@ const h2 = document.querySelector('h2')
 const select = document.querySelector('.select')
 const button = document.getElementsByTagName('button')
 const section = document.getElementsByClassName('products')
+const catalog = document.getElementById('catalog')
+
+// console.log(catalog);
 
 //looping button
-for (but of button) {
+for (let i = 0; i < button.length; i++) {
     //add counters
-    but.addEventListener('click', (e) => {
+    button[i].addEventListener('click', (e) => {
         var add = Number(h2.getAttribute('data-count') || 0)
         h2.setAttribute('data-count', add + 1)
         h2.classList.add('zero')
@@ -25,13 +28,35 @@ for (but of button) {
             }
         }
 
+        const item = catalog.querySelectorAll(':nth-child(1)')
+
+        // switch (i) {
+        //     case 1:
+        //         console.log(item[1]);
+        //         break;
+        //     case 3:
+        //         console.log(item[2]);
+        //         break;
+        //     case 5:
+        //         console.log(item[3]);
+        //         break;
+        //     case 7:
+        //         console.log(item[4]);
+        //         break;
+        //     case 9:
+        //         console.log(item[5]);
+        //         break;
+        //     case 11:
+        //         console.log(item[6]);
+        //         break;
+        // }
 
         //moving animation
         const image = e.target.parentNode.querySelector('img')
         const span = e.target.parentNode.querySelector('span')
         const mImage = image.cloneNode(false)
         //  console.log(mImage);
-        // console.log(span);
+        // console.log(e.pageX, e.pageY);
 
         span.appendChild(mImage)
         span.classList.add('active')
@@ -39,6 +64,9 @@ for (but of button) {
             span.removeChild(mImage)
             span.classList.remove('active')
         }, 500)
+        // console.log(span);
+
+
 
         //add remove button
         select.addEventListener('click', deleteButton)
