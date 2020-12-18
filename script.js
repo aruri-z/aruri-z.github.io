@@ -94,5 +94,4 @@ for (let i = 0; i < button.length; i++) {
 
 const warning = document.getElementById('oops')
 warning.innerText = "Oops! fitur 'buy-now' sedang dalam perbaikan"
-warning.setAttribute('style', 'opacity')
 warning.style.opacity = 0.3
